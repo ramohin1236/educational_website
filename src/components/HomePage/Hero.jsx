@@ -4,6 +4,7 @@ import { MapPin, Calendar, Star, MousePointer2 } from 'lucide-react';
 import Image from 'next/image';
 
 const Hero = () => {
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden font-sans">
       {/* Background Image with Green Overlay */}
