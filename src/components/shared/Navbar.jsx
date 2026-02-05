@@ -5,14 +5,32 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Drawer, Modal } from "antd";
 import Image from "next/image";
-import { FaArrowRight} from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { CiPhone } from "react-icons/ci";
 import { IoMailUnreadOutline } from "react-icons/io5";
 import { IoIosHome } from "react-icons/io";
 import { useGetContactQuery } from "@/redux/Api/blogApi";
 import { useRouter } from "next/navigation";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 import Script from "next/script";
+
+
+
+const SocialIcon = ({ href, icon: Icon }) => (
+  <Link
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-6 h-6 rounded-full flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300"
+  >
+    <Icon className="w-5 h-5" />
+  </Link>
+);
+
+
+
+
 export const Navbar = () => {
   const router = useRouter();
 
@@ -59,31 +77,42 @@ export const Navbar = () => {
   return (
     <header className="w-full">
       {/* Top Banner */}
-      <div className="bg-primary border-b border-gray-400 text-white py-2">
+      <div className="bg-primary border-b border-gray-400 text-white md:py-2">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm gap-4">
           <div></div>
-          <div className="hidden md:block">
-            <div className="flex gap-6 lg:gap-11 flex-wrap justify-center">
-              <div className="flex items-center gap-3">
-                <div className="bg-stone-900 text-white w-[40px] h-[40px] flex justify-center text-3xl items-center rounded-full">
-                  <IoMailUnreadOutline />
-                </div>
-                <div>
-                  <h1 className="text-sm lg:text-sm">Email Us Anytime</h1>
-                  <h1 className="font-semibold text-sm lg:text-sm">{email}</h1>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="bg-stone-900 text-white w-[40px] h-[40px] flex justify-center text-3xl items-center rounded-full">
-                  <CiPhone />
-                </div>
-                <div>
-                  <h1 className="text-sm">Call Us Anytime</h1>
-                  <h1 className="font-semibold text-sm">{phone}</h1>
-                </div>
-              </div>
+          <div className="hidden md:flex w-full items-center">
+            <div className="flex gap-6 lg:gap-11 flex-wrap justify-between  w-full">
+
+              {/* left side */}
               <div>
-            
+                <div className="flex gap-4">
+                  <SocialIcon href="https://facebook.com" icon={Facebook}/>
+                  <SocialIcon href="https://twitter.com" icon={Twitter} />
+                  <SocialIcon href="https://instagram.com" icon={Instagram} />
+                  <SocialIcon href="https://linkedin.com" icon={Linkedin} />
+                </div>
+              </div>
+
+              {/* right side  */}
+              <div className="flex items-center gap-12">
+                <div className="flex items-center gap-2">
+                  <div className=" text-white w-[20px] h-[20px] flex justify-center text-3xl items-center rounded-full">
+                    <IoMailUnreadOutline />
+                  </div>
+                  <div>
+                    {/* <h1 className="text-sm lg:text-sm">Email Us Anytime</h1> */}
+                    <h1 className=" text-sm lg:text-sm">{email}</h1>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className=" text-white w-[20px] h-[20px] flex justify-center text-3xl items-center rounded-full">
+                    <CiPhone />
+                  </div>
+                  <div>
+                    {/* <h1 className="text-sm">Call Us Anytime</h1> */}
+                    <h1 className=" text-sm">+1 {phone}</h1>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -114,11 +143,10 @@ export const Navbar = () => {
                     <div key={idx} className="relative group">
                       <Link
                         href={item.path || "#"}
-                        className={`px-2 py-1 transition-colors ${
-                          pathname === item.path
-                            ? "border-b text-accent border-accent font-medium"
-                            : "text-black hover:text-black"
-                        }`}
+                        className={`px-2 py-1 transition-colors ${pathname === item.path
+                          ? "border-b text-accent border-accent font-medium"
+                          : "text-black hover:text-black"
+                          }`}
                       >
                         {item.label}
                         {item.children && (
@@ -159,9 +187,10 @@ export const Navbar = () => {
                     </div>
                   ))}
                 </div>
-                   <button
+                <button
+                
                   onClick={() => router.push("/student-login")}
-                  className="
+                  className="hidden md:flex
         relative overflow-hidden 
         px-6 py-3 text-lg rounded-full 
         flex items-center gap-3 
@@ -171,7 +200,7 @@ export const Navbar = () => {
       "
                 >
                   <span className="relative z-10">Login</span>
-                  <FaArrowRight className="relative z-10" />
+                  <FaArrowRight className="relative z-10 w-6" />
 
                   <span
                     className="
@@ -198,13 +227,13 @@ export const Navbar = () => {
 
                   {userDropdownOpen && (
                     <>
-           
+
                       <div
                         className="fixed inset-0 z-10"
                         onClick={() => setUserDropdownOpen(false)}
                       ></div>
 
-     
+
                       <div className="absolute z-50 right-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md border py-2 ">
                         {userMenuItems.map((item, idx) => (
                           <Link
@@ -260,11 +289,10 @@ export const Navbar = () => {
             <Link
               key={idx}
               href={item.path}
-              className={`px-4 py-2 hover:bg-gray-700 cursor-pointer rounded ${
-                pathname === item.path
-                  ? "font-medium text-yellow-400"
-                  : "text-black"
-              }`}
+              className={`px-4 py-2 hover:bg-gray-700 cursor-pointer rounded ${pathname === item.path
+                ? "font-medium text-yellow-400"
+                : "text-black"
+                }`}
               onClick={() => setDrawerOpen(false)}
             >
               {item.label}
@@ -275,6 +303,32 @@ export const Navbar = () => {
         {/* Divider */}
         <div className="border-t border-gray-600 my-4"></div>
 
+         <button
+                  onClick={() => router.push("/student-login")}
+                  className="
+        relative overflow-hidden 
+        px-6 py-3 text-lg rounded-full 
+        flex items-center gap-3 
+        bg-accent text-white
+        transition-all duration-300
+        group
+      "
+                >
+                  <span className="relative z-10">Login</span>
+                  <FaArrowRight className="relative z-10" />
+
+                  <span
+                    className="
+          absolute inset-0 
+          bg-primary  
+          translate-x-[-102%] 
+          group-hover:translate-x-0 
+          transition-transform duration-500 
+          rounded-full
+        "
+                  />
+                </button>
+
         {/* User Menu Items */}
         <div className=" flex-col space-y-2 hidden">
           <h3 className="text-gray-400 text-sm font-semibold mb-2 px-4">
@@ -284,11 +338,10 @@ export const Navbar = () => {
             <Link
               key={idx}
               href={item.path}
-              className={`px-4 py-2 hover:bg-gray-700 cursor-pointer rounded ${
-                pathname === item.path
-                  ? "font-medium text-yellow-400"
-                  : "text-black"
-              }`}
+              className={`px-4 py-2 hover:bg-gray-700 cursor-pointer rounded ${pathname === item.path
+                ? "font-medium text-yellow-400"
+                : "text-black"
+                }`}
               onClick={() => setDrawerOpen(false)}
             >
               {item.label}
