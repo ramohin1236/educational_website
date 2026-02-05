@@ -53,9 +53,9 @@ export const Navbar = () => {
       label: "Our Services",
       path: "/our_services",
       children: [
-        { label: "Group Tutoring", path: "/our_services/group-tutoring" },
-        { label: "1-on-1 Tutoring", path: "/our_services/one-on-one-tutoring" },
-        { label: "At Home Tutoring", path: "/our_services/at-home-tutoring" },
+        { label: "Group Tutoring", path: "/group_tutoring" },
+        { label: "1-on-1 Tutoring", path: "/one_onee_tutoring" },
+        { label: "At Home Tutoring", path: "/home_tutoring" },
       ],
     },
     { label: "Blogs", path: "/blog" },
