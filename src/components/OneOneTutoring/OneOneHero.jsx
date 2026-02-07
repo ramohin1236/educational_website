@@ -39,7 +39,7 @@ const OneOneHero = () => {
                     </p>
 
                     <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-extrabold text-lg transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-wider">
-                        Book a 1:1 Tutoring Session →
+                        Book a Session →
                     </button>
                 </div>
             </section>

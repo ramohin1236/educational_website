@@ -37,34 +37,72 @@ const LearningBalance = () => {
                     </p>
                 </div>
 
+                  <div>
+                    
+                  </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    {/* Visual Scale Side */}
-                    <div className="relative p-10 bg-white rounded-[3rem] shadow-2xl border-4 border-[#e0f0e6]">
-                        <div className="flex items-end justify-center gap-6 mb-12">
-                            <div className="flex-1 group">
-                                <div className="h-64 bg-gradient-to-t from-[#408f55] to-[#2d5f3f] rounded-2xl flex flex-col items-center justify-end p-6 border-b-8 border-[#2d5f3f] shadow-xl group-hover:scale-105 transition-transform">
-                                    <div className="w-16 h-16 bg-[#FFD646] rounded-full flex items-center justify-center text-3xl mb-4 shadow-lg border-4 border-white">👥</div>
-                                    <div className="text-5xl font-black text-white mb-2">60%</div>
-                                    <div className="text-white/80 text-xs font-bold uppercase tracking-wider text-center">Group Instruction</div>
-                                </div>
-                                <div className="text-center mt-6 font-black text-[#2d5f3f]">Shared Lessons</div>
+                    <div className="w-full max-w-2xl mx-auto px-4 py-8">
+            {/* Visual Scale Card */}
+            <div className="relative p-6 md:p-10 bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl border-4 border-[#e0f0e6]">
+                
+                {/* Bars Container */}
+                <div className="flex items-end justify-center gap-4 md:gap-8 mb-10 md:mb-12">
+                    
+                    {/* 60% Bar Column */}
+                    <div className="flex-1 group">
+                        {/* Bar - Taller Height for 60% */}
+                        <div className="h-64 md:h-80 w-full bg-gradient-to-t from-[#408f55] to-[#2d5f3f] rounded-2xl flex flex-col items-center justify-end p-4 md:p-6 border-b-8 border-[#2d5f3f] shadow-xl group-hover:-translate-y-2 transition-transform duration-300 ease-out">
+                            {/* Icon */}
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-[#FFD646] rounded-full flex items-center justify-center text-xl md:text-3xl mb-3 md:mb-4 shadow-lg border-4 border-white shrink-0">
+                                👥
                             </div>
-
-                            <div className="flex-1 group">
-                                <div className="h-48 bg-gradient-to-t from-[#FFD646] to-[#ffb700] rounded-2xl flex flex-col items-center justify-end p-6 border-b-8 border-[#ffb700] shadow-xl group-hover:scale-105 transition-transform">
-                                    <div className="w-16 h-16 bg-[#408f55] rounded-full flex items-center justify-center text-3xl mb-4 shadow-lg border-4 border-white">⭐</div>
-                                    <div className="text-5xl font-black text-[#2d5f3f] mb-2">40%</div>
-                                    <div className="text-[#2d5f3f]/80 text-xs font-bold uppercase tracking-wider text-center">Personal Attention</div>
-                                </div>
-                                <div className="text-center mt-6 font-black text-[#2d5f3f]">Individual Focus</div>
+                            {/* Percentage */}
+                            <div className="text-3xl md:text-5xl font-black text-white mb-1 md:mb-2">
+                                60%
+                            </div>
+                            {/* Label */}
+                            <div className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-wider text-center leading-tight">
+                                Group Instruction
                             </div>
                         </div>
-
-                        {/* Scale Base Line */}
-                        <div className="h-3 w-full bg-gradient-to-r from-[#408f55] via-[#FFD646] to-[#408f55] rounded-full shadow-inner relative">
-                            <div className="absolute left-1/2 -top-6 -translate-x-1/2 text-4xl">⚖️</div>
+                        {/* Bottom Text */}
+                        <div className="text-center mt-4 md:mt-6 font-black text-[#2d5f3f] text-sm md:text-base">
+                            Shared Lessons
                         </div>
                     </div>
+
+                    {/* 40% Bar Column */}
+                    <div className="flex-1 group">
+                        {/* Bar - Shorter Height for 40% */}
+                        <div className="h-48 md:h-60 w-full bg-gradient-to-t from-[#FFD646] to-[#ffb700] rounded-2xl flex flex-col items-center justify-end p-4 md:p-6 border-b-8 border-[#ffb700] shadow-xl group-hover:-translate-y-2 transition-transform duration-300 ease-out">
+                            {/* Icon */}
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-[#408f55] rounded-full flex items-center justify-center text-xl md:text-3xl mb-3 md:mb-4 shadow-lg border-4 border-white shrink-0">
+                                ⭐
+                            </div>
+                            {/* Percentage */}
+                            <div className="text-3xl md:text-5xl font-black text-[#2d5f3f] mb-1 md:mb-2">
+                                40%
+                            </div>
+                            {/* Label */}
+                            <div className="text-[#2d5f3f]/80 text-[10px] md:text-xs font-bold uppercase tracking-wider text-center leading-tight">
+                                Personal Attention
+                            </div>
+                        </div>
+                        {/* Bottom Text */}
+                        <div className="text-center mt-4 md:mt-6 font-black text-[#2d5f3f] text-sm md:text-base">
+                            Individual Focus
+                        </div>
+                    </div>
+                </div>
+
+                {/* Scale Base Line */}
+                <div className="h-3 w-full bg-gradient-to-r from-[#408f55] via-[#FFD646] to-[#408f55] rounded-full shadow-inner relative">
+                    <div className="absolute left-1/2 -top-5 md:-top-6 -translate-x-1/2 text-3xl md:text-4xl drop-shadow-md">
+                        ⚖️
+                    </div>
+                </div>
+            </div>
+        </div>
 
                     {/* Benefits Side */}
                     <div className="space-y-8">

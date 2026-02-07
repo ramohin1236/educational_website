@@ -22,8 +22,8 @@ const GroupHero = () => {
             <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center text-white flex flex-col items-center">
                 {/* Hero Badge */}
                 <div className="bg-[#FFD646] text-black px-6 py-3 rounded-full font-bold text-sm tracking-widest uppercase mb-8 shadow-xl flex items-center gap-2">
-                    <Users size={18} />
-                    <span>Learn Together, Grow Together</span>
+                    <Users size={18} className='hidden md:block'/>
+                    <span className='text-xs md:text-base'>Learn Together, Grow Together</span>
                 </div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-8 max-w-4xl tracking-tighter shadow-sm">
@@ -36,11 +36,9 @@ const GroupHero = () => {
 
                 <div className="flex flex-col sm:flex-row gap-6">
                     <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-widest">
-                        Enroll Now →
+                       Book a Session →
                     </button>
-                    <button className="bg-transparent hover:bg-white/10 text-white px-12 py-6 rounded-2xl font-black text-xl transition-all border-2 border-white/50 backdrop-blur-sm uppercase tracking-widest">
-                        View Schedule
-                    </button>
+                 
                 </div>
 
                 {/* Floating Icons Representation */}

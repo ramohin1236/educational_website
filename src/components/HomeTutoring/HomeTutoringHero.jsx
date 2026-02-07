@@ -31,7 +31,7 @@ const HomeTutoringHero = () => {
                 {/* CTA Button */}
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-extrabold text-lg transition-all shadow-2xl hover:scale-105 active:scale-95">
-                        Schedule a Home Tutoring Consultation
+                         Book a Session →
                     </button>
                 </div>
             </div>
