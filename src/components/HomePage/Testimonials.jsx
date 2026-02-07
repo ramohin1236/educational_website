@@ -111,19 +111,6 @@ const Testimonials = () => {
                 ))}
               </Splide>
 
-              {/* Custom Navigation Arrows - Positioned to the sides */}
-              {/* <button
-                className="absolute top-1/2 -left-4 md:-left-12 -translate-y-1/2 bg-white shadow-lg border border-gray-100 p-3 rounded-full text-gray-400 hover:text-blue-500 transition-all z-10 hidden md:block"
-                onClick={handlePrevClick}
-              >
-                <HiArrowNarrowLeft className="text-2xl" />
-              </button>
-              <button
-                className="absolute top-1/2 -right-4 md:-right-12 -translate-y-1/2 bg-white shadow-lg border border-gray-100 p-3 rounded-full text-gray-400 hover:text-blue-500 transition-all z-10 hidden md:block"
-                onClick={handleNextClick}
-              >
-                <HiArrowNarrowRight className="text-2xl" />
-              </button> */}
             </div>
           )}
           

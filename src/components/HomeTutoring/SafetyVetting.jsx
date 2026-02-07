@@ -43,7 +43,7 @@ const SafetyVetting = () => {
                     {safetyCards.map((card, index) => (
                         <div
                             key={index}
-                            className="bg-[#f8fdf9] p-8 rounded-2xl border-2 border-[#e0f0e6] transition-all hover:shadow-xl hover:border-[#408f55] group flex flex-col items-center text-center"
+                            className="bg-[#f8fdf9] p-8 rounded-2xl border-4 border-[#e0f0e6] transition-all hover:shadow-xl hover:border-[#ffd646] group flex flex-col items-center text-center"
                         >
                             <div className="w-16 h-16 bg-gradient-to-br from-[#408f55] to-[#2d5f3f] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 {card.icon}

@@ -40,7 +40,7 @@ const ReportingFeature = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Visual Report Preview */}
-                    <div className="bg-gradient-to-br from-[#f8fdf9] to-[#e8f5ed] p-8 md:p-12 rounded-[2rem] border-2 border-[#d4e8df] shadow-2xl relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#f8fdf9] to-[#e8f5ed] p-8 md:p-12 rounded-[2rem] border-4 border-[#d4e8df] hover:border-[#ffd646] transition-all shadow-2xl relative overflow-hidden">
                         {/* Decorative background element */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#408f55]/5 rounded-full -mr-16 -mt-16"></div>
 
