@@ -19,17 +19,17 @@ export default function StudentLoginPage() {
 
   return (
     <>
-     <div className='h-[20vh] flex flex-col justify-center items-center'>
-     
-    <div>
-             <Script
-         
-        src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9wTFpKUCIsIldlYnNpdGVJRCI6Indic181WnRKNyIsIldlYnNpdGVCbG9ja0lEIjoid2JiX21jY1hKRyJ9"
-        strategy="afterInteractive"
-      />
-    </div>
-    
-     </div>
+      <div className='h-[20vh] flex flex-col justify-center items-center'>
+
+        <div>
+          <Script
+
+            src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9wTFpKUCIsIldlYnNpdGVJRCI6Indic181WnRKNyIsIldlYnNpdGVCbG9ja0lEIjoid2JiX21jY1hKRyJ9"
+            strategy="afterInteractive"
+          />
+        </div>
+
+      </div>
 
     </>
   );
