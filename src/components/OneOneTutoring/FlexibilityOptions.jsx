@@ -49,16 +49,16 @@ const FlexibilityOptions = () => {
                     {locations.map((loc, index) => (
                         <div key={index} className="bg-white/10 backdrop-blur-md p-10 md:p-14 rounded-3xl border-2 border-white/20 hover:border-white/40 transition-all group shadow-2xl">
                             <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 transition-transform">
-                                {loc.icon}
+                                {loc?.icon}
                             </div>
 
-                            <h3 className="text-3xl font-black text-white mb-6">{loc.type}</h3>
+                            <h3 className="text-3xl font-black text-white mb-6">{loc?.type}</h3>
                             <p className="text-white/90 text-lg leading-relaxed mb-10 opacity-80 font-medium">
-                                {loc.description}
+                                {loc?.description}
                             </p>
 
                             <ul className="space-y-4 text-left border-t border-white/10 pt-8 mt-8">
-                                {loc.benefits.map((benefit, bIndex) => (
+                                {loc.benefits?.map((benefit, bIndex) => (
                                     <li key={bIndex} className="flex items-center gap-4 text-white text-base font-medium">
                                         <div className="w-6 h-6 bg-[#FFD646] rounded-full flex items-center justify-center shrink-0 shadow-lg">
                                             <Check size={14} className="text-white font-bold" />

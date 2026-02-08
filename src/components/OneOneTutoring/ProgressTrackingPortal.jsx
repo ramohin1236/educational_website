@@ -62,23 +62,23 @@ const ProgressTrackingPortal = () => {
                                     <div key={idx} className="bg-white p-5 rounded-xl border border-gray-50 shadow-sm hover:shadow-md transition-shadow">
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className="w-12 h-12 bg-[#f0f5f3] rounded-lg flex items-center justify-center">
-                                                {subj.icon}
+                                                {subj?.icon}
                                             </div>
                                             <div>
-                                                <h4 className="font-black text-[#2d5f3f]">{subj.name}</h4>
-                                                <p className="text-xs text-gray-400 font-medium">{subj.topic}</p>
+                                                <h4 className="font-black text-[#2d5f3f]">{subj?.name}</h4>
+                                                <p className="text-xs text-gray-400 font-medium">{subj?.topic}</p>
                                             </div>
                                         </div>
 
                                         <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
                                             <div
                                                 className="h-full bg-gradient-to-r from-[#408f55] to-[#FFD646] rounded-full"
-                                                style={{ width: `${subj.progress}%` }}
+                                                style={{ width: `${subj?.progress}%` }}
                                             ></div>
                                         </div>
                                         <div className="flex justify-between mt-3 text-sm">
                                             <span className="text-gray-400 font-medium">Mastery Level</span>
-                                            <span className="text-[#2d5f3f] font-black">{subj.progress}% (+{(idx + 1) * 3}% improvement)</span>
+                                            <span className="text-[#2d5f3f] font-black">{subj?.progress}% (+{(idx + 1) * 3}% improvement)</span>
                                         </div>
                                     </div>
                                 ))}
@@ -94,9 +94,9 @@ const ProgressTrackingPortal = () => {
                                     {feat.icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-black text-[#2d5f3f] mb-2">{feat.title}</h4>
+                                    <h4 className="text-xl font-black text-[#2d5f3f] mb-2">{feat?.title}</h4>
                                     <p className="text-gray-500 text-sm leading-relaxed">
-                                        {feat.description}
+                                        {feat?.description}
                                     </p>
                                 </div>
                             </div>
