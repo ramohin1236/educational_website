@@ -1,6 +1,9 @@
+"use client"
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 const GroupFinalCTA = () => {
+    const router = useRouter();
     return (
         <section className="py-24 px-6 bg-white relative overflow-hidden text-center">
             {/* Background Decorative patterns */}
@@ -16,11 +19,10 @@ const GroupFinalCTA = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <button className="bg-[#408f55] hover:bg-[#2d5f3f] text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-widest w-full sm:w-auto">
+                    <button
+                        onClick={() => router.push("/student-login")}
+                        className="bg-[#408f55] hover:bg-[#2d5f3f] text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-widest w-full sm:w-auto">
                         Enroll Now →
-                    </button>
-                    <button className="bg-white hover:bg-[#FFD646] text-[#2d5f3f] px-12 py-6 rounded-2xl font-black text-xl transition-all border-4 border-[#FFD646] shadow-xl hover:scale-105 active:scale-95 uppercase tracking-widest w-full sm:w-auto">
-                        Schedule a Tour
                     </button>
                 </div>
             </div>

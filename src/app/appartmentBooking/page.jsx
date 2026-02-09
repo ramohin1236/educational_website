@@ -14,9 +14,23 @@ export default function AppartmentBooking() {
     };
 
     tryOpenLogin();
+
+    return () => {
+      if (window.TutorBirdWidget && typeof window.TutorBirdWidget.close === 'function') {
+        window.TutorBirdWidget.close();
+      }
+      const selectors = [
+        'iframe[src*="tutorbird.com"]',
+        'div[id*="tutorbird"]',
+        'div[class*="tutorbird"]'
+      ];
+      selectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => el.remove());
+      });
+    };
   }, []);
 
- 
+
   return (
     <>
       <div className="h-[10vh] flex flex-col justify-center items-center">
