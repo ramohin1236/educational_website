@@ -1,174 +1,158 @@
+"use client";
+
 import Image from "next/image";
-import background from "../../../public/img/background.png";
 import service1 from "../../../public/img/service1.jpg";
 import service2 from "../../../public/img/service2.jpg";
 import service3 from "../../../public/img/service3.jpg";
-import service4 from "../../../public/img/service4.jpg";
 import hero from "../../../public/img/bannar1.jpg";
 import icon from "../../../public/img/icon1.png";
-import { FaArrowRight } from "react-icons/fa";
-import { GoArrowRight } from "react-icons/go";
-import { RiArrowRightWideLine } from "react-icons/ri";
+import { GoArrowRight, GoHome } from "react-icons/go";
+import { RiArrowRightSLine, RiShieldStarLine } from "react-icons/ri";
+import { Users, Check } from "lucide-react";
 import Link from "next/link";
 
 const services = [
   {
     title: "At Home Tutoring",
+    path: "/home_tutoring",
     img: service1,
+    description: "Personalized learning in the comfort and safety of your own home.",
     list: [
       "Parent Consultation",
       "Academic Assessment",
-      "Personalized Report & Lesson Plan",
-      "Scheduling & Setup",
+      "Personalized Lesson Plan",
       "Progress Reporting",
     ],
   },
   {
     title: "Group Tutoring",
+    path: "/group_tutoring",
     img: service2,
+    description: "Collaborative learning in small groups to boost confidence and social skills.",
     list: [
-      "Parent Consultation",
-      "Academic Assessment",
-      "Personalized Report & Lesson Plan",
-      "Scheduling & Setup",
-      "Progress Reporting",
+      "Small Group Interaction",
+      "Peer Motivation",
+      "Grade-Level Focused",
+      "All Materials Included",
     ],
   },
   {
     title: "1-on-1 Tutoring",
+    path: "/one_onee_tutoring",
     img: service3,
+    description: "Dedicated attention to bridge learning gaps and accelerate understanding.",
     list: [
-      "Parent Consultation",
-      "Academic Assessment",
-      "Personalized Report & Lesson Plan",
-      "Scheduling & Setup",
-      "Progress Reporting",
+      "Tutor Match Guarantee",
+      "Customized Curriculum",
+      "Goal-Oriented Prep",
+      "Flexible Scheduling",
     ],
   },
-  // {
-  //   title: "Online Tutoring",
-  //   img: service4,
-  //   list: [
-  //     "Parent Consultation",
-  //     "Academic Assessment",
-  //     "Personalized Report & Lesson Plan",
-  //     "Scheduling & Setup",
-  //     "Progress Reporting",
-  //   ],
-  // },
 ];
 
 export default function OurServicespage() {
   return (
-    <div className=" ">
-      <div className="relative w-full h-[500px] md:h-[650px] overflow-hidden">
-        {/* Background Image using Next/Image */}
+    <div className="bg-white">
+      {/* Premium Hero Section */}
+      <section className="relative w-full h-[50vh] min-h-[450px] flex items-center overflow-hidden">
         <Image
           src={hero}
           alt="Hero Banner"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover"
         />
+        {/* Deep Green Overlay */}
+        <div className="absolute inset-0 bg-[#408f55]/85"></div>
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary  to-[#000000b9] opacity-80"></div>
+        <div className="relative z-10 container mx-auto px-6 text-white text-center flex flex-col items-center">
+          {/* Badge */}
+          <div className="bg-[#FFD646] text-[#2d5f3f] px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest mb-6 shadow-xl flex items-center gap-2">
+            <RiShieldStarLine size={18} />
+            <span>Premium Educational Services</span>
+          </div>
 
-        {/* Content */}
-        <div className="relative px-3  flex items-center h-full container m-auto text-white">
-          <div>
-            <h1 className=" leading-tight">
-              <span className="md:text-5xl text-3xl">Our Services</span> <br />
-              <p className="py-3 max-w-2xl text-white">
-                With a team of experienced tutors, flexible learning options,
-                and data-driven progress tracking, we ensure that education is
-                not just about grades — it’s about growth, confidence, and
-                lifelong curiosity.
-              </p>
-            </h1>
+          <h1 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter shadow-sm leading-tight">
+            Our Services
+          </h1>
 
-            <div className="mt-11 ">
-              <button
-                className="
-                      relative overflow-hidden 
-                      px-6 py-3 text-lg rounded-full 
-                      flex items-center gap-3 
-                      bg-transparent border border-white
-                      transition-all duration-300
-                      group
-                    "
-              >
-                <span className="relative z-10  flex items-center gap-1">
-                  Home <RiArrowRightWideLine className=" " /> Our Services
-                </span>
+          <p className="max-w-3xl text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-10">
+            With a team of experienced tutors and data-driven progress tracking, we ensure that education is about growth, confidence, and lifelong curiosity.
+          </p>
 
-                {/* Hover Green Animation Layer */}
-                <span
-                  className="
-                        absolute inset-0 
-                        bg-accent
-                        border border-transparent 
-                        translate-x-[-101%] 
-                        group-hover:translate-x-0 
-                        transition-transform duration-500 
-                        rounded-full
-                      "
-                ></span>
-              </button>
-            </div>
+          {/* Breadcrumb Navigation */}
+          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 text-sm font-bold uppercase tracking-widest">
+            <Link href="/" className="hover:text-[#FFD646] transition-colors flex items-center gap-1">
+              <GoHome size={18} /> Home
+            </Link>
+            <RiArrowRightSLine className="opacity-50" />
+            <span className="text-[#FFD646]">Services</span>
           </div>
         </div>
-      </div>
-      <div className="container mx-auto px-4 mt-16 mb-20">
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="md:text-4xl text-3xl font-bold text-gray-900">Our Service</h2>
-          <p className="text-gray-600 mt-2 max-w-xl mx-auto">
-            Easily find and book qualified tutors by subject, grade level, and
-            availability.
+      </section>
+
+      {/* Services Grid Section */}
+      <div className="container mx-auto px-6 py-24 mb-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-black text-[#2d5f3f] mb-6">
+            Explore Our Learning Paths
+          </h2>
+          <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+            Find the perfect environment for your child's educational journey—modeled for success and measurable growth.
           </p>
         </div>
 
-        {/* Grid Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-2xl overflow-hidden border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border-4 border-[#e0f0e6] hover:border-[#FFD646] transition-all duration-500 group flex flex-col"
             >
-              {/* Top Image */}
-              <div className="h-48 w-full">
+              {/* Image Container with Hover Effect */}
+              <div className="h-64 w-full relative overflow-hidden">
                 <Image
                   src={service.img}
                   alt={service.title}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                  <span className="text-white font-black text-xs uppercase tracking-widest">Learn More Details</span>
+                </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Image src={icon} alt="icon" width={40} height={40} />
-                  <h3 className="text-xl font-semibold text-gray-900">
+              {/* Content Container */}
+              <div className="p-10 flex flex-col flex-grow">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-[#f8fdf9] rounded-2xl flex items-center justify-center border-2 border-[#e0f0e6] shadow-sm">
+                    <Image src={icon} alt="icon" width={32} height={32} />
+                  </div>
+                  <h3 className="text-2xl font-black text-[#2d5f3f]">
                     {service.title}
                   </h3>
                 </div>
 
-                <ul className="text-gray-600 space-y-2 text-sm mb-5">
+                <p className="text-gray-500 font-medium mb-8 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-4 mb-10 flex-grow">
                   {service.list.map((item, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span>•</span> {item}
+                    <li key={i} className="flex items-center gap-3 text-gray-600 font-bold text-sm">
+                      <div className="w-6 h-6 bg-[#408f55] rounded-full flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-110">
+                        <Check size={14} className="text-white font-bold" />
+                      </div>
+                      {item}
                     </li>
                   ))}
                 </ul>
 
-                <div className="relative">
-                  <div className="bg-[#c3e2c9] rounded-full w-[43px]  h-[43px]"></div>
-                  <Link href={"/our_services/servicesDetails"}>
-                    {" "}
-                    <button className=" absolute top-2 flex gap-2 items-center left-4 z-10">
-                      Read More <GoArrowRight className=" " />
-                    </button>
+                {/* Interactive Dynamic Link */}
+                <div className="relative mt-auto">
+                  <Link href={service.path} className="group/link inline-flex items-center gap-2">
+                    <div className="relative z-10 flex items-center gap-3 bg-[#408f55] group-hover/link:bg-[#2d5f3f] text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-lg">
+                      Read More <GoArrowRight className="text-xl group-hover/link:translate-x-2 transition-transform" />
+                    </div>
+                    <div className="absolute -inset-2 bg-[#FFD646]/20 rounded-3xl blur-md opacity-0 group-hover/link:opacity-100 transition-opacity"></div>
                   </Link>
                 </div>
               </div>

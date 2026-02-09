@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const Hero = () => {
- const router = useRouter();
+  const router = useRouter();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden font-sans">
       {/* Background Image with Green Overlay */}
@@ -61,23 +61,26 @@ const Hero = () => {
 
         {/* Call to Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <button    onClick={() => router.push("/bookConsultationLink")} className="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
+          <button onClick={() => router.push("/bookConsultationLink")} className="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
             Schedule My Consultation
           </button>
-          <button className="bg-white hover:bg-gray-100 text-green-700 px-12 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
+          <button
+            onClick={() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-white hover:bg-gray-100 text-green-700 px-12 py-4 rounded-xl font-bold text-lg transition-all shadow-xl"
+          >
             View Pricing
           </button>
         </div>
 
         {/* Scroll Indicator */}
-       <div className='mt-4'>
-            <div className="absolute bottom-10 left-1/2 animate-float opacity-80 ">
-          {/* Mouse Frame */}
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
-            <div className="w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
+        <div className='mt-4'>
+          <div className="absolute bottom-10 left-1/2 animate-float opacity-80 ">
+            {/* Mouse Frame */}
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
+              <div className="w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
+            </div>
           </div>
         </div>
-       </div>
       </div>
     </section>
   );

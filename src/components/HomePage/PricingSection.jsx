@@ -4,7 +4,7 @@ import { MapPin, Check, ExternalLink } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const PricingSection = () => {
-   const router = useRouter();
+  const router = useRouter();
   // JSON data for pricing cards
   const pricingPlans = [
     {
@@ -62,9 +62,9 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-16 px-6 bg-white font-sans">
+    <section id="pricing-section" className="py-16 px-6 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Top Banner */}
         <div className="bg-[#FFD646] rounded-2xl p-6 md:p-8 text-center mb-16 shadow-sm">
           <h3 className="text-xl md:text-2xl font-bold text-black mb-2">
@@ -85,7 +85,7 @@ const PricingSection = () => {
             Simple, Transparent Pricing for Group Tutoring
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            Choose a monthly plan that matches your child's goals and your family's schedule. 
+            Choose a monthly plan that matches your child's goals and your family's schedule.
             Groups are limited to 3 students per tutor to maintain quality.
           </p>
         </div>
@@ -93,13 +93,12 @@ const PricingSection = () => {
         {/* Pricing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {pricingPlans.map((plan, index) => (
-            <div 
+            <div
               key={index}
-              className={`relative flex flex-col p-8 rounded-2xl transition-all ${
-                plan.isPopular 
-                ? 'border-2 border-[#48A76B] shadow-xl scale-105 z-10 bg-white' 
-                : 'border border-gray-100 hover:border-gray-300'
-              }`}
+              className={`relative flex flex-col p-8 rounded-2xl transition-all ${plan.isPopular
+                  ? 'border-2 border-[#48A76B] shadow-xl scale-105 z-10 bg-white'
+                  : 'border border-gray-100 hover:border-gray-300'
+                }`}
             >
               {plan.isPopular && (
                 <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FFD646] text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
@@ -124,13 +123,12 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-3 rounded-lg font-bold text-sm transition-all ${
-                plan.isPopular 
-                ? 'bg-[#48A76B] text-white hover:bg-[#3d8e5a]' 
-                : 'bg-white text-gray-800 border border-gray-200 hover:bg-gray-50'
-              }`}>
+              {/* <button className={`w-full py-3 rounded-lg font-bold text-sm transition-all ${plan.isPopular
+                  ? 'bg-[#48A76B] text-white hover:bg-[#3d8e5a]'
+                  : 'bg-white text-gray-800 border border-gray-200 hover:bg-gray-50'
+                }`}>
                 Get Started
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
@@ -149,7 +147,7 @@ const PricingSection = () => {
 
         {/* Final CTA */}
         <div className="flex justify-center">
-          <button    onClick={() => router.push("/bookConsultationLink")} className="bg-[#48A76B] hover:bg-[#3d8e5a] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg transition-transform hover:scale-105 active:scale-95">
+          <button onClick={() => router.push("/bookConsultationLink")} className="bg-[#48A76B] hover:bg-[#3d8e5a] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg transition-transform hover:scale-105 active:scale-95">
             Schedule My Consultation
           </button>
         </div>

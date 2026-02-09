@@ -1,135 +1,117 @@
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import hero from "../../../public/img/bannar1.jpg";
-import { RiArrowRightWideLine, RiArticleLine } from "react-icons/ri";
+import { GoHome, GoArrowRight } from "react-icons/go";
+import { RiArrowRightSLine, RiArticleLine } from "react-icons/ri";
 import { useGetAllBlogsQuery } from "@/redux/Api/blogApi";
 import Link from "next/link";
 
 export default function BlogPage() {
-
-
   const { data: blogData, isLoading } = useGetAllBlogsQuery();
-  console.log("blogData===>", blogData?.data?.items)
   const blogs = blogData?.data?.items || [];
 
   return (
-    <div>
-      <div className="relative w-full h-[500px] md:h-[650px] overflow-hidden">
-        {/* Background Image using Next/Image */}
-
+    <div className="bg-white">
+      {/* Premium Hero Section */}
+      <section className="relative w-full h-[50vh] min-h-[450px] flex items-center overflow-hidden">
         <Image
           src={hero}
           alt="Hero Banner"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover"
         />
+        <div className="absolute inset-0 bg-[#408f55]/85"></div>
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary  to-[#000000b9] opacity-80"></div>
+        <div className="relative z-10 container mx-auto px-6 text-white text-center flex flex-col items-center">
+          <div className="bg-[#FFD646] text-[#2d5f3f] px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest mb-6 shadow-xl flex items-center gap-2">
+            <RiArticleLine size={18} />
+            <span>Insights & Education</span>
+          </div>
 
-        {/* Content */}
-        <div className="relative  px-3 flex items-center h-full container m-auto text-white">
-          <div>
-            <h1 className=" leading-tight">
-              <span className="md:text-5xl text-3xl">Blogs</span> <br />
-              <p className="py-3 max-w-2xl text-white">
-                With a team of experienced tutors, flexible learning options,
-                and data-driven progress tracking, we ensure that education is
-                not just about grades — it’s about growth, confidence, and
-                lifelong curiosity.
-              </p>
-            </h1>
+          <h1 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter shadow-sm leading-tight">
+            Our Blog
+          </h1>
 
-            <div className="mt-11 ">
-              <button
-                className="
-                      relative overflow-hidden 
-                      px-6 py-3 text-lg rounded-full 
-                      flex items-center gap-3 
-                      bg-transparent border border-white
-                      transition-all duration-300
-                      group
-                    "
-              >
-                <span className="relative z-10  flex items-center gap-1">
-                  Home <RiArrowRightWideLine className=" " /> Blogs
-                </span>
+          <p className="max-w-3xl text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-10">
+            Stay updated with the latest educational strategies, tutor tips, and academic success stories from the Seeds of Learning community.
+          </p>
 
-                {/* Hover Green Animation Layer */}
-                <span
-                  className="
-                        absolute inset-0 
-                        bg-accent
-                        border border-transparent 
-                        translate-x-[-101%] 
-                        group-hover:translate-x-0 
-                        transition-transform duration-500 
-                        rounded-full
-                      "
-                ></span>
-              </button>
-            </div>
+          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 text-sm font-bold uppercase tracking-widest">
+            <Link href="/" className="hover:text-[#FFD646] transition-colors flex items-center gap-1">
+              <GoHome size={18} /> Home
+            </Link>
+            <RiArrowRightSLine className="opacity-50" />
+            <span className="text-[#FFD646]">Blog</span>
           </div>
         </div>
-      </div>
-      <section className="py-16 md:px-4 px-3 container mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <h1 className="md:text-4xl text-3xl font-bold text-gray-900">Blog</h1>
-          <p className="text-gray-500 mt-2 max-w-xl mx-auto">
-            Easily find and book qualified tutors by subject, grade level, and
-            availability.
+      </section>
+
+      {/* Blog Cards Grid */}
+      <section className="py-24 px-6 container mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-black text-[#2d5f3f] mb-6">
+            Educational Wisdom
+          </h2>
+          <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+            Explore articles designed to help parents and students navigate their learning journey with confidence.
           </p>
         </div>
 
-        {/* Content */}
         {!isLoading && blogs.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 text-center">
-            <div className="bg-gray-100 p-6 rounded-full mb-6">
-              <RiArticleLine className="text-6xl text-gray-400" />
+          <div className="flex flex-col items-center justify-center py-20 text-center bg-[#f8fdf9] rounded-[3rem] border-4 border-dashed border-[#e0f0e6]">
+            <div className="bg-white p-8 rounded-full shadow-lg mb-8">
+              <RiArticleLine className="text-7xl text-[#408f55]/20" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">No Blogs Published Yet</h2>
-            <p className="text-gray-500 max-w-md mb-8">
-              We haven't published any blog posts yet. Stay tuned for updates and educational articles coming soon!
+            <h2 className="text-3xl font-black text-[#2d5f3f] mb-4">No Stories Yet</h2>
+            <p className="text-gray-500 max-w-md mb-10 font-medium">
+              We're currently gathering the best insights from our educators. Check back soon for our first published piece!
             </p>
-            <Link href="/" className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-[#095d56] transition font-medium">
+            <Link href="/" className="bg-[#408f55] hover:bg-[#2d5f3f] text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-xl hover:scale-105 active:scale-95">
               Back to Home
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {blogs.map((img, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {blogs.map((blog, index) => (
               <div
                 key={index}
-                className="rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition p-0 overflow-hidden bg-white"
+                className="group bg-white rounded-[2.5rem] border-4 border-[#e0f0e6] hover:border-[#FFD646] shadow-2xl overflow-hidden transition-all duration-500 flex flex-col"
               >
-                {/* Image */}
-                <div className="w-full h-56 relative">
-
+                {/* Blog Image */}
+                <div className="relative h-64 md:h-72 w-full overflow-hidden">
                   <Image
-                    src={img?.image.replace(/\\/g, "/")}
-                    alt="Blog image"
+                    src={blog?.image.replace(/\\/g, "/")}
+                    alt={blog?.title}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 space-y-3 flex flex-col items-start">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {img?.title}
+                {/* Blog Content */}
+                <div className="p-10 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 mb-4 text-[#408f55] font-black text-xs uppercase tracking-widest">
+                    <RiArticleLine /> Updated Insights
+                  </div>
+
+                  <h3 className="text-2xl font-black text-[#2d5f3f] mb-6 leading-tight group-hover:text-[#408f55] transition-colors">
+                    {blog?.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                    {img?.content?.replace(/<\/?[^>]+(>|$)/g, "")}
+
+                  <p className="text-gray-500 font-medium mb-10 text-sm leading-relaxed line-clamp-3">
+                    {blog?.content?.replace(/<\/?[^>]+(>|$)/g, "")}
                   </p>
 
-
-                  <Link href={`/blog/${img?._id}`} className="mt-4 bg-primary text-white px-5 py-2 rounded-lg hover:bg-[#095d56] transition text-sm font-medium ">
-                    Learn more
-                  </Link>
+                  <div className="mt-auto">
+                    <Link href={`/blog/${blog?._id}`} className="group/btn inline-flex items-center gap-3">
+                      <div className="relative z-10 flex items-center gap-3 bg-[#f8fdf9] border-2 border-[#e0f0e6] group-hover/btn:border-[#FFD646] group-hover/btn:bg-[#FFD646] text-[#2d5f3f] px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-sm">
+                        Read Article <GoArrowRight className="text-xl group-hover/btn:translate-x-2 transition-transform" />
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
