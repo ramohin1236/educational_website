@@ -15,6 +15,27 @@ export default function StudentLoginPage() {
     };
 
     tryOpenLogin();
+
+    return () => {
+      // Small delay to ensure the widget has time to initialize before we try to kill it
+      // if the user navigates away extremely quickly
+      if (window.TutorBirdWidget && typeof window.TutorBirdWidget.close === 'function') {
+        window.TutorBirdWidget.close();
+      }
+
+      // Force remove any persistent DOM elements injected by the widget
+      const selectors = [
+        'iframe[src*="tutorbird.com"]',
+        'div[id*="tutorbird"]',
+        'div[class*="tutorbird"]',
+        '.tutorbird-modal',
+        '.tutorbird-overlay'
+      ];
+
+      selectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => el.remove());
+      });
+    };
   }, []);
 
   return (
