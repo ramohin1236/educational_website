@@ -1,8 +1,11 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import heroImg from "../../../public/img/bannar1.jpg"; // Reusing brand banner
+import { useRouter } from 'next/navigation';
 
 const OneOneHero = () => {
+     const router = useRouter();
     const stats = [
         { number: "98%", label: "Student Satisfaction" },
         { number: "2.5+", label: "Grade Level Improvement" },
@@ -38,7 +41,7 @@ const OneOneHero = () => {
                         Unlock your child's full potential with dedicated one-on-one instruction tailored to their unique learning style and academic goals.
                     </p>
 
-                    <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-extrabold text-lg transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-wider">
+                    <button    onClick={() => router.push("/1-1TutoringLink")} className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-extrabold text-lg transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-wider">
                         Book a Session →
                     </button>
                 </div>

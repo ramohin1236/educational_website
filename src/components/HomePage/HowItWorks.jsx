@@ -1,7 +1,10 @@
+'use client'
 import React from 'react';
 import { MessageSquare, Users, Calendar, TrendingUp } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const HowItWorks = () => {
+   const router = useRouter();
   // JSON data for easy management
   const steps = [
     {
@@ -72,7 +75,7 @@ const HowItWorks = () => {
         </div>
 
         {/* CTA Button */}
-        <button className="bg-[#48A76B] hover:bg-[#3d8e5a] text-white px-10 py-3 rounded-lg font-bold text-lg transition-colors shadow-md">
+        <button    onClick={() => router.push("/bookConsultationLink")} className="bg-[#48A76B] hover:bg-[#3d8e5a] text-white px-10 py-3 rounded-lg font-bold text-lg transition-colors shadow-md">
           Schedule My Consultation
         </button>
       </div>

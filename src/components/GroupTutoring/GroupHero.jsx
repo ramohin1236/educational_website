@@ -1,9 +1,12 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import { Users } from 'lucide-react';
 import heroImg from "../../../public/img/bannar1.jpg"; // Reusing brand banner
+import { useRouter } from 'next/navigation';
 
 const GroupHero = () => {
+     const router = useRouter();
     return (
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden font-sans">
             {/* Background Image with Green Overlay */}
@@ -35,7 +38,7 @@ const GroupHero = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                    <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-widest">
+                    <button    onClick={() => router.push("/groupTutoringLink")} className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-widest">
                        Book a Session →
                     </button>
                  

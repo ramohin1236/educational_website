@@ -1,7 +1,10 @@
+'use client'
 import React from 'react';
 import { Users, Target, FileText, BookOpen, TrendingUp, ShieldCheck } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const WhyChooseUs = () => {
+   const router = useRouter();
   // JSON data for the feature cards
   const features = [
     {
@@ -80,7 +83,7 @@ const WhyChooseUs = () => {
         </p>
 
         {/* Yellow CTA Button */}
-        <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-xl hover:scale-105 active:scale-95">
+        <button      onClick={() => router.push("/bookConsultationLink")} className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-xl hover:scale-105 active:scale-95">
           Schedule My Consultation
         </button>
 

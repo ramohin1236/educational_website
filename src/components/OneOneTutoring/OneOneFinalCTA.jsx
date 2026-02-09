@@ -1,6 +1,9 @@
+'use client'
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const OneOneFinalCTA = () => {
+     const router = useRouter();
     return (
         <section className="py-24 px-6 bg-[#408f55] relative overflow-hidden">
             {/* Decorative patterns */}
@@ -16,10 +19,10 @@ const OneOneFinalCTA = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-black text-lg transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-wider w-full sm:w-auto">
+                    <button      onClick={() => router.push("/1-1TutoringLink")} className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-black text-lg transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-wider w-full sm:w-auto">
                         Book a 1:1 Tutoring Session →
                     </button>
-                    <button className="bg-transparent hover:bg-white hover:text-[#408f55] text-white px-10 py-5 rounded-xl font-black text-lg transition-all border-2 border-white w-full sm:w-auto">
+                    <button      onClick={() => router.push("/bookConsultationLink")} className="bg-transparent hover:bg-white hover:text-[#408f55] text-white px-10 py-5 rounded-xl font-black text-lg transition-all border-2 border-white w-full sm:w-auto">
                         Schedule Free Consultation
                     </button>
                 </div>

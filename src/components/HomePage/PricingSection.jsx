@@ -1,7 +1,10 @@
+'use client'
 import React from 'react';
 import { MapPin, Check, ExternalLink } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const PricingSection = () => {
+   const router = useRouter();
   // JSON data for pricing cards
   const pricingPlans = [
     {
@@ -146,7 +149,7 @@ const PricingSection = () => {
 
         {/* Final CTA */}
         <div className="flex justify-center">
-          <button className="bg-[#48A76B] hover:bg-[#3d8e5a] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg transition-transform hover:scale-105 active:scale-95">
+          <button    onClick={() => router.push("/bookConsultationLink")} className="bg-[#48A76B] hover:bg-[#3d8e5a] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg transition-transform hover:scale-105 active:scale-95">
             Schedule My Consultation
           </button>
         </div>

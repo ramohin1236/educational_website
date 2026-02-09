@@ -1,10 +1,12 @@
+'use client'
 import React from 'react';
 import hero from "../../../public/img/bannar1.jpg";
 import { MapPin, Calendar, Star, MousePointer2 } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
-
+ const router = useRouter();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden font-sans">
       {/* Background Image with Green Overlay */}
@@ -59,7 +61,7 @@ const Hero = () => {
 
         {/* Call to Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <button className="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
+          <button    onClick={() => router.push("/bookConsultationLink")} className="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">
             Schedule My Consultation
           </button>
           <button className="bg-white hover:bg-gray-100 text-green-700 px-12 py-4 rounded-xl font-bold text-lg transition-all shadow-xl">

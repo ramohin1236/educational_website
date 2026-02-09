@@ -7,7 +7,7 @@ export default function StudentLoginPage() {
   useEffect(() => {
     const tryOpenLogin = () => {
       if (window.TutorBirdWidget) {
-        window.TutorBirdWidget.open('login');
+        window.TutorBirdWidget.open('1-1 Tutoring - In Center');
       } else {
 
         setTimeout(tryOpenLogin, 300);
@@ -19,12 +19,12 @@ export default function StudentLoginPage() {
 
   return (
     <>
-      <div className='h-[20vh] flex flex-col justify-center items-center'>
+      <div className=''>
 
         <div >
           <Script
 
-            src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9wTFpKUCIsIldlYnNpdGVJRCI6Indic181WnRKNyIsIldlYnNpdGVCbG9ja0lEIjoid2JiX21jY1hKRyJ9"
+            src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9wTFpKUCIsIldlYnNpdGVJRCI6Indic181WnRKNyIsIldlYnNpdGVCbG9ja0lEIjoid2JiX2Zoc3NKYiJ9"
             strategy="afterInteractive"
           />
         </div>

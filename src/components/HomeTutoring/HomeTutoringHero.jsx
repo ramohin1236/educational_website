@@ -1,8 +1,11 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import heroImg from "../../../public/img/bannar1.jpg"; // Reusing existing banner image
+import { useRouter } from 'next/navigation';
 
 const HomeTutoringHero = () => {
+     const router = useRouter();
     return (
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden font-sans">
             {/* Background Image with Green Overlay */}
@@ -30,7 +33,7 @@ const HomeTutoringHero = () => {
 
                 {/* CTA Button */}
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <button className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-extrabold text-lg transition-all shadow-2xl hover:scale-105 active:scale-95">
+                    <button    onClick={() => router.push("/atHomeTutoringLink")} className="bg-[#FFD646] hover:bg-[#ffdf70] text-black px-10 py-5 rounded-xl font-extrabold text-lg transition-all shadow-2xl hover:scale-105 active:scale-95">
                          Book a Session →
                     </button>
                 </div>

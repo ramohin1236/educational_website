@@ -3,11 +3,11 @@
 import { useEffect } from 'react';
 import Script from 'next/script';
 
-export default function StudentLoginPage() {
+export default function BookConsultationPage() {
   useEffect(() => {
     const tryOpenLogin = () => {
       if (window.TutorBirdWidget) {
-        window.TutorBirdWidget.open('login');
+        window.TutorBirdWidget.open('Academic Consultation');
       } else {
 
         setTimeout(tryOpenLogin, 300);
@@ -24,7 +24,7 @@ export default function StudentLoginPage() {
         <div >
           <Script
 
-            src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9wTFpKUCIsIldlYnNpdGVJRCI6Indic181WnRKNyIsIldlYnNpdGVCbG9ja0lEIjoid2JiX21jY1hKRyJ9"
+            src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9wTFpKUCIsIldlYnNpdGVJRCI6Indic181WnRKNyIsIldlYnNpdGVCbG9ja0lEIjoid2JiX2Zoc0hKWiJ9"
             strategy="afterInteractive"
           />
         </div>
